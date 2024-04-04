@@ -1,8 +1,6 @@
-import { useLoaderData, Form, useParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 
-const CreatePatientDetails = (params) => {
-  // const { patients, medicalRecordsLoader } = useLoaderData();
-
+const CreatePatientDetails = () => {
   const doctors = useLoaderData();
 
   console.log(doctors);

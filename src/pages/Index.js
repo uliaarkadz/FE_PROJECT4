@@ -1,5 +1,5 @@
-import { useLoaderData, Form, useNavigate, Link } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
+
 const Landing = () => {
   const doctors = useLoaderData();
 

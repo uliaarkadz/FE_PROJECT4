@@ -9,7 +9,6 @@ import Patients from "./pages/Patients";
 import CreateDoctor from "./pages/CreateDoctor";
 import PatientDetails from "./pages/PatientDetails";
 import CreatePatient from "./pages/CreatePatient";
-import CreatePatientDetails from "./pages/CreatePatientDetails";
 import {
   patientsLoader,
   doctorsLoader,
