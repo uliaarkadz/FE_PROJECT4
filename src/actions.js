@@ -67,7 +67,7 @@ export const createDoctorAction = async ({ request }) => {
     license: formData.get("license"),
   };
 
-  await fetch(`${URL}/doctors`, {
+  await fetch(`${URL}/doctors/`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export const createPatientAction = async ({ request }) => {
     dob: formData.get("dob"),
   };
 
-  await fetch(`${URL}/patients`, {
+  await fetch(`${URL}/patients/`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export const createMedicalRecordAction = async ({ request }) => {
     doctorId: formData.get("doctorId"),
   };
 
-  await fetch(`${URL}/medicalrecords`, {
+  await fetch(`${URL}/medicalrecords/`, {
     method: "post",
     headers: {
       "Content-Type": "application/json",
@@ -121,7 +121,15 @@ export const createMedicalRecordAction = async ({ request }) => {
 };
 
 export const deletePatientAction = async ({ params }) => {
-  await fetch(`${URL}/patients/${params.id}`, {
+  await fetch(`${URL}/patients/${params.id}/`, {
+    method: "delete",
+  });
+
+  return redirect("/");
+};
+
+export const deleteMedicalAction = async ({ params }) => {
+  await fetch(`${URL}/medicalrecords/${params.id}/`, {
     method: "delete",
   });
 

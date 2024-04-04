@@ -6,7 +6,15 @@ import {
 import App from "./App";
 import Landing from "./pages/Index";
 import Patients from "./pages/Patients";
-import { patientsLoader, doctorsLoader, medicalRecordsLoader } from "./loaders";
+import CreateDoctor from "./pages/CreateDoctor";
+import PatientDetails from "./pages/PatientDetails";
+import CreatePatient from "./pages/CreatePatient";
+import CreatePatientDetails from "./pages/CreatePatientDetails";
+import {
+  patientsLoader,
+  doctorsLoader,
+  patientsMedicalRecordsLoader,
+} from "./loaders";
 import {
   updatePatientAction,
   updateDoctorAction,
@@ -21,9 +29,23 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="" element={<Landing />} loader={doctorsLoader} />
-      <Route path="/patients" element={<Patients />} loader={patientsLoader}>
-        <Route path="" loader={medicalRecordsLoader} />
-      </Route>
+      <Route
+        path="/patients/:doctorId"
+        element={<Patients />}
+        loader={patientsLoader}
+      />
+      <Route path="/newdoctor" element={<CreateDoctor />} />
+      <Route
+        path="/newpatient"
+        element={<CreatePatient />}
+        loader={doctorsLoader}
+      />
+      {/* <Route path="/newpatientdetails" element={<CreatePatientDetails />} /> */}
+      <Route
+        path="/patientDetails/:doctorId/:patientId"
+        element={<PatientDetails />}
+        loader={patientsMedicalRecordsLoader}
+      />
       <Route path="createPatient" action={createPatientAction} />
       <Route path="updatePatient/:id" action={updatePatientAction} />
       <Route path="deletePatient/:id" action={deletePatientAction} />
