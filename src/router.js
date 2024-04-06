@@ -17,8 +17,6 @@ import {
   medicalRecordsLoader,
 } from "./loaders";
 import {
-  updatePatientAction,
-  updateDoctorAction,
   updateMedicalRecordAction,
   createPatientAction,
   createDoctorAction,

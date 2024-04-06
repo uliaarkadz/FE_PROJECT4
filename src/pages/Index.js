@@ -14,15 +14,6 @@ const Landing = () => {
 
   return (
     <div className="container">
-      <div className="row justify-content-end">
-        <a href={`/newdoctor`}>
-          <div className="col-6">
-            <button type="submit" className="btn btn-primary p-3">
-              CREATE NEW DOCTOR
-            </button>
-          </div>
-        </a>
-      </div>
       <div class="row justify-content-center">
         <div className="col-4">
           <h3>Select Doctor:</h3>
@@ -44,6 +35,16 @@ const Landing = () => {
           </select>
         </div>
       </div>
+      <a href={`/newdoctor`}>
+        {" "}
+        <div className="row justify-content-center">
+          <div className="col-3">
+            <button type="submit" className="btn btn-primary p-3">
+              CREATE NEW DOCTOR
+            </button>
+          </div>
+        </div>
+      </a>
     </div>
   );
 };

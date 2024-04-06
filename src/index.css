@@ -14,11 +14,11 @@ code {
 
 .container {
   padding: 20px;
-  margin: 20px;
+  margin: 10px;
 }
 button,
-h3 {
-  margin: 20px !important;
+h1 {
+  margin: 10px !important;
   color: violet !important;
   font-weight: 900 !important;
 }
