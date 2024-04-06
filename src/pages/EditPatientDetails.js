@@ -4,11 +4,11 @@ const EditPatientDetails = () => {
   const [searchParams] = useSearchParams();
   const medrecords = useLoaderData();
 
-  const medRecordIdValue = searchParams.get("medrecordId");
+  const medRecordIdValue = Number(searchParams.get("medrecordId"));
 
-  const medrecord = medrecords.medrec.filter((record) => {
-    if (record.id == medRecordIdValue) return record;
-  });
+  const medrecord = medrecords.medrec.filter((record) =>
+    record.id === medRecordIdValue ? record : console.log("no")
+  );
 
   return (
     <div className="container">
