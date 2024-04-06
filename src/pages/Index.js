@@ -13,34 +13,37 @@ const Landing = () => {
   }
 
   return (
-    <div>
-      <div className="Section-header">
+    <div className="container">
+      <div className="row justify-content-end">
         <a href={`/newdoctor`}>
-          <button>Create new Doctor</button>
+          <div className="col-6">
+            <button type="submit" className="btn btn-primary p-3">
+              CREATE NEW DOCTOR
+            </button>
+          </div>
         </a>
       </div>
-      <div className="Section-header">
-        <h3>Doctors Selection</h3>
+      <div class="row justify-content-center">
+        <div className="col-4">
+          <h3>Select Doctor:</h3>
+        </div>
       </div>
-      {/* {doctors.map((doctor) => {
-        return (
-          <div key={doctor.id} className="doctor">
-            <a href={`/patients/${doctor.id}`}>
-              <h1>{doctor.name}</h1>
-            </a>
-            <h1>{doctor.license}</h1>
-          </div>
-        );
-      })} */}
-
-      <select onChange={(event) => handleChange(event.target.value)}>
-        <option value="">select</option>
-        {doctors.map((doctor) => {
-          return (
-            <option value={`/patients/${doctor.id}`}>{doctor.name}</option>
-          );
-        })}
-      </select>
+      <div class="row justify-content-center">
+        <div className="col-4">
+          <select
+            className="form-select form-select-lg mb-3"
+            aria-label="Default select example"
+            onChange={(event) => handleChange(event.target.value)}
+          >
+            <option value="">Choose Doctor's Name</option>
+            {doctors.map((doctor) => {
+              return (
+                <option value={`/patients/${doctor.id}`}>{doctor.name}</option>
+              );
+            })}
+          </select>
+        </div>
+      </div>
     </div>
   );
 };

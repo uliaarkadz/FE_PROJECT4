@@ -9,10 +9,12 @@ import Patients from "./pages/Patients";
 import CreateDoctor from "./pages/CreateDoctor";
 import PatientDetails from "./pages/PatientDetails";
 import CreatePatient from "./pages/CreatePatient";
+import EditPatientDetails from "./pages/EditPatientDetails";
 import {
   patientsLoader,
   doctorsLoader,
   patientsMedicalRecordsLoader,
+  medicalRecordsLoader,
 } from "./loaders";
 import {
   updatePatientAction,
@@ -22,6 +24,7 @@ import {
   createDoctorAction,
   createMedicalRecordAction,
   deletePatientAction,
+  deleteMedicalAction,
 } from "./actions";
 
 const router = createBrowserRouter(
@@ -41,9 +44,14 @@ const router = createBrowserRouter(
       />
       {/* <Route path="/newpatientdetails" element={<CreatePatientDetails />} /> */}
       <Route
-        path="/patientDetails/:doctorId/:patientId"
+        path="/patientDetails/:patientId"
         element={<PatientDetails />}
         loader={patientsMedicalRecordsLoader}
+      />
+      <Route
+        path="/editpatientDetails/:patientId"
+        element={<EditPatientDetails />}
+        loader={medicalRecordsLoader}
       />
       <Route path="createPatient" action={createPatientAction} />
       <Route path="updatePatient/:id" action={updatePatientAction} />
@@ -55,6 +63,7 @@ const router = createBrowserRouter(
         path="updatemedicalrecord/:id"
         action={updateMedicalRecordAction}
       />
+      <Route path="deletemedicalrecord/:id" action={deleteMedicalAction} />
     </Route>
   )
 );

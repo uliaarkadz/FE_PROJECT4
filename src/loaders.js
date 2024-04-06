@@ -15,7 +15,13 @@ export const doctorsLoader = async () => {
 export const patientsMedicalRecordsLoader = async ({ params }) => {
   const docresponse = await fetch(`${URL}/medicalrecords/${params.patientId}`);
   const medrec = await docresponse.json();
-  const patresponse = await fetch(`${URL}/patients/${params.patientId}`);
+  const patresponse = await fetch(`${URL}/patients/`);
   const patients = await patresponse.json();
   return { medrec, patients };
+};
+
+export const medicalRecordsLoader = async ({ params }) => {
+  const docresponse = await fetch(`${URL}/medicalrecords/${params.patientId}`);
+  const medrec = await docresponse.json();
+  return { medrec };
 };
