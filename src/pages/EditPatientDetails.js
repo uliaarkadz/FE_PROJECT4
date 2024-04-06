@@ -1,5 +1,5 @@
 import { useLoaderData, useSearchParams, Form } from "react-router-dom";
-import { useState } from "react";
+
 const EditPatientDetails = () => {
   const [searchParams] = useSearchParams();
   const medrecords = useLoaderData();
