@@ -1,8 +1,6 @@
 import { useLoaderData, Form } from "react-router-dom";
 
 const CreatePatient = () => {
-  // const { patients, medicalRecordsLoader } = useLoaderData();
-
   const doctors = useLoaderData();
 
   console.log(doctors);
@@ -17,33 +15,23 @@ const CreatePatient = () => {
 
       <Form action="/createPatient" method="post">
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            First Name
-          </label>
+          <label class="form-label">First Name</label>
           <input className="form-control" type="input" name="firstName" />
         </div>
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            Last Name
-          </label>
+          <label class="form-label">Last Name</label>
           <input className="form-control" type="input" name="lastName" />
         </div>
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            Gender
-          </label>
+          <label class="form-label">Gender</label>
           <input className="form-control" type="input" name="gender" />
         </div>
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            DOB
-          </label>
+          <label class="form-label">DOB</label>
           <input className="form-control" type="date" name="dob" />
         </div>
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            Doctor
-          </label>
+          <label class="form-label">Doctor</label>
           <select
             name="doctorId"
             className="form-select form-select-lg mb-3"

@@ -1,8 +1,6 @@
 import { useLoaderData, Form } from "react-router-dom";
 
 const CreateDoctor = () => {
-  // const { patients, medicalRecordsLoader } = useLoaderData();
-
   const patients = useLoaderData();
 
   console.log(patients);
@@ -16,9 +14,7 @@ const CreateDoctor = () => {
 
       <Form action="/createDoctor" method="post">
         <div className="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            Doctor Name
-          </label>
+          <label class="form-label">Doctor Name</label>
           <input
             className="form-control"
             type="input"
@@ -27,9 +23,7 @@ const CreateDoctor = () => {
           />
         </div>
         <div class="col-6">
-          <label for="exampleFormControlInput1" class="form-label">
-            License #
-          </label>
+          <label class="form-label">License #</label>
           <input
             className="form-control"
             type="number"

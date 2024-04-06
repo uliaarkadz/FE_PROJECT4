@@ -1,13 +1,13 @@
 import { useLoaderData, useSearchParams, Form } from "react-router-dom";
-
+import { useState } from "react";
 const EditPatientDetails = () => {
   const [searchParams] = useSearchParams();
   const medrecords = useLoaderData();
 
   const medRecordIdValue = searchParams.get("medrecordId");
-  // eslint-disable-next-line
+
   const medrecord = medrecords.medrec.filter((record) => {
-    if (record.id === medRecordIdValue) return record;
+    if (record.id == medRecordIdValue) return record;
   });
 
   return (
@@ -17,6 +17,7 @@ const EditPatientDetails = () => {
           <h3>EDIT PATIENT MEDICAL RECORD</h3>
         </div>
       </div>
+
       <Form
         action={`/updatemedicalrecord/${medRecordIdValue}`}
         method="post"
@@ -24,48 +25,39 @@ const EditPatientDetails = () => {
       >
         <div className="row justify-content-center g-3">
           <div className="col-md-8">
-            <label for="exampleFormControlInput1" className="form-label">
-              Visit Summary
-            </label>
+            <label className="form-label">Patient Id</label>
+            <input
+              className="form-control"
+              type="number"
+              name="patientId"
+              defaultValue={medrecord[0].patientId}
+            />
+          </div>
+          <div className="col-md-8">
+            <label className="form-label">Visit Summary</label>
             <textarea
               className="form-control"
               type="input"
               name="visitSummary"
-              value={medrecord.visitSummary}
+              defaultValue={medrecord[0].visitSummary}
             />
           </div>
           <div className="col-md-8">
-            <label for="exampleFormControlInput1" className="form-label">
-              Prescriptions
-            </label>
+            <label className="form-label">Prescriptions</label>
             <textarea
               className="form-control"
               type="input"
               name="prescriptions"
-              value={medrecord.prescriptions}
+              defaultValue={medrecord[0].prescriptions}
             />
           </div>
           <div className="col-md-8">
-            <label for="exampleFormControlInput1" className="form-label">
-              Lab Work
-            </label>
+            <label className="form-label">Lab Work</label>
             <input
               className="form-control"
               type="input"
               name="labWork"
-              value={medrecord.labWork}
-            />
-          </div>
-          <div className="col-md-8">
-            <label for="exampleFormControlInput1" className="form-label">
-              Patient Id
-            </label>
-            <input
-              readOnly
-              className="form-control"
-              type="number"
-              name="patientId"
-              value={medrecord.patientId}
+              defaultValue={medrecord[0].labWork}
             />
           </div>
         </div>

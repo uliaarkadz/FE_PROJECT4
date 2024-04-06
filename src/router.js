@@ -42,7 +42,7 @@ const router = createBrowserRouter(
         element={<CreatePatient />}
         loader={doctorsLoader}
       />
-      {/* <Route path="/newpatientdetails" element={<CreatePatientDetails />} /> */}
+
       <Route
         path="/patientDetails/:patientId"
         element={<PatientDetails />}
@@ -54,10 +54,8 @@ const router = createBrowserRouter(
         loader={medicalRecordsLoader}
       />
       <Route path="createPatient" action={createPatientAction} />
-      <Route path="updatePatient/:id" action={updatePatientAction} />
       <Route path="deletePatient/:id" action={deletePatientAction} />
       <Route path="createDoctor" action={createDoctorAction} />
-      <Route path="updatedoctor/:id" action={updateDoctorAction} />
       <Route path="createmedicalrecord" action={createMedicalRecordAction} />
       <Route
         path="updatemedicalrecord/:id"

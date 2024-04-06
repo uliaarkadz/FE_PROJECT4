@@ -1,8 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 
 const Patients = () => {
-  // const { patients, medicalRecordsLoader } = useLoaderData();
-
   const patients = useLoaderData();
 
   console.log(patients);
@@ -26,9 +24,7 @@ const Patients = () => {
       {patients.map((patient) => {
         return (
           <div key={patient.id} className="patient">
-            <a
-              href={`/patientDetails/${patient.doctorId}?patientId=${patient.id}`}
-            >
+            <a href={`/patientDetails/${patient.id}?patientId=${patient.id}`}>
               <div className="row border patients">
                 <div className="col-4 p-3 bg-light d-flex align-items-center justify-content-center">
                   {patient.firstName}

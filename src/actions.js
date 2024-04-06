@@ -46,7 +46,6 @@ export const updateMedicalRecordAction = async ({ request, params }) => {
     prescriptions: formData.get("prescriptions"),
     labWork: formData.get("labWork"),
     patientId: formData.get("patientId"),
-    doctorId: formData.get("doctorId"),
   };
 
   await fetch(`${URL}/medicalrecords/${params.id}/`, {
@@ -106,7 +105,6 @@ export const createMedicalRecordAction = async ({ request }) => {
     prescriptions: formData.get("prescriptions"),
     labWork: formData.get("labWork"),
     patientId: formData.get("patientId"),
-    doctorId: formData.get("doctorId"),
   };
 
   await fetch(`${URL}/medicalrecords/`, {
